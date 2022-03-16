@@ -6,6 +6,7 @@ Project with a functionality similar to Trello/Asana, where users of a team can 
 
 - CSS3
 - React
+- React Router v5
 - React Context API
 - React custom hooks
 - Firebase v8.5
