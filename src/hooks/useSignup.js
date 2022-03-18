@@ -26,11 +26,12 @@ export const useSignup = () => {
       // upload user thumbnail
       // every user will have their own folder with their thumbnail uploaded
       const uploadPath = `thumbnails/${res.user.uid}/${thumbnail.name}`;
-      const img = await projectStorage.ref(uploadPath).put(thumbnail);
-      const imgURL = await img.ref.getDownloadURL();
+      const storageRef = projectStorage.ref();
+      const img = await storageRef.child(uploadPath).put(thumbnail);
+      const imgUrl = await img.ref.getDownloadURL();
 
       // add display name and thumbnail to user
-      await res.user.updateProfile({ displayName, photoURL: imgURL });
+      await res.user.updateProfile({ displayName, photoURL: imgUrl });
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user });
