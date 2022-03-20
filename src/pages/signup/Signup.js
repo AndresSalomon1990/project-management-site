@@ -89,7 +89,7 @@ export default function Signup() {
           Loading
         </button>
       )}
-      {error && <div className='error'>error</div>}
+      {error && <div className='error'>{error}</div>}
     </form>
   );
 }
