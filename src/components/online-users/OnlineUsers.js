@@ -14,6 +14,10 @@ export default function OnlineUsers() {
       {documents &&
         documents.map((user) => (
           <div key={user.id} className='user-list-item'>
+            <span
+              className='online-user'
+              style={{ background: user.online ? '#0ebb50' : '#e60000' }}
+            ></span>
             <span>{user.displayName}</span>
             <Avatar src={user.photoURL} />
           </div>
