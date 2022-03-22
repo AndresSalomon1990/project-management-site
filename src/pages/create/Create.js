@@ -91,6 +91,8 @@ export default function Create() {
     if (!response.error) {
       // redirect to Dashboard page if there is no error
       history.push('/');
+    } else {
+      setFormError(response.error);
     }
   };
 
