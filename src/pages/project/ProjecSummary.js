@@ -1,16 +1,16 @@
 import Avatar from '../../components/avatar/Avatar';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProjecSummary({ project }) {
   const { deleteDocument } = useFirestore('projects');
   const { user } = useAuthContext();
-  const history = useHistory();
+  const navigate = useNavigate();
   
   const handleClick = () => {
     deleteDocument(project.id);
-    history.push('/');
+    navigate('/');
   };
 
   return (
